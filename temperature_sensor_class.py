@@ -92,7 +92,7 @@ class MonitoredCell(object):
         auth_token  = "1b4c8b535453b43a35ea686a7aa60576"
         client = TwilioRestClient(account_sid, auth_token)
 
-        message = client.messages.create(body = ' :: '.join(self.cellID, self.sensorID[-6:], self.status)
+        message = client.messages.create(body = ' :: '.join(self.cellID, self.sensorID[-6:], self.status),
             to="+18083877670",    # Replace with your phone number
             from_="+18082010840") # Replace with your Twilio number
         print(message.sid)

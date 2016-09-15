@@ -98,5 +98,5 @@ while True:
             print('Could not read from device ' + cell.sensorID + '\n')
         except FileNotFoundError:
             print('Could not locate file for device ' + cell.sensorID + '\n')
-    time.sleep(10)
+    time.sleep(60*10)
 

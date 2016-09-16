@@ -124,8 +124,10 @@ class MonitoredCell(object):
 
         if self.currentTemperature > self.alarmThreshold:
             self.status = 'Alarm'
+            self.sendSMS()
         elif self.currentTemperature > self.warningThreshold:
             self.status = 'Warning'
+            self.sendSMS()
         else:
             self.status = 'Normal'
 

@@ -69,7 +69,7 @@ while True:
         if sensor_ID not in registered_devices:
             registered_devices.add(sensor_ID)
             print('Sensor ID {} registered @ {}'.format(sensor_ID, time.ctime()))
-            cells.append(MonitoredCell(cellID_dict[sensor_ID], base_dir, sensor_ID, program_dict[sensor_ID], 'NCRB', '001', temperature_dict[sensor_ID], 27, 29, False))
+            cells.append(MonitoredCell(cellID_dict[sensor_ID], base_dir, sensor_ID, program_dict[sensor_ID], 'NCRB', '001', temperature_dict[sensor_ID], 30, 35, False))
 
     print(attached_devices)
     print('::::::::::::::')

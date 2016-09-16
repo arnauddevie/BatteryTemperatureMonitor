@@ -84,7 +84,7 @@ while True:
         try:
             cell.update_Temperature()
             cell.check_Status()
-            print(str.join(' :: ', (self.cellID, self.sensorID[-6:], self.status, str(self.currentTemperature))))
+            print(str.join(' :: ', (cell.cellID, cell.sensorID[-6:], cell.status, str(cell.currentTemperature) + celsius)))
             # print('Sensor ID: '+ cell.sensorID)
             # print('Cell ID: ' + cell.cellID)
             # print('Ambient temperature: ' + str(cell.ambientTemperature) + celsius)

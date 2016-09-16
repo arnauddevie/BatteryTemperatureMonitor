@@ -129,7 +129,7 @@ class MonitoredCell(object):
         else:
             self.status = 'Normal'
 
-        self.sendSMS()
+        # self.sendSMS()
 
         return self.status
 

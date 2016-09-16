@@ -79,21 +79,22 @@ while True:
     print('::::::::::::::')
     print(lost_devices)
 
-    print('\nDetected the following sensors:\n')
+    print('\nDetected the following {} sensors:\n'.format(len(cells)))
     for cell in cells:
         try:
             cell.update_Temperature()
             cell.check_Status()
-            print('Sensor ID: '+ cell.sensorID)
-            print('Cell ID: ' + cell.cellID)
-            print('Ambient temperature: ' + str(cell.ambientTemperature) + celsius)
-            print('Warning: ' + str(cell.warningThreshold) + celsius)
-            print('Alarm: ' + str(cell.alarmThreshold) + celsius)
-            print('These settings are valid') if cell.validSettings else print('These settings are incorrect')
-            print('Current temperature: ' + str(cell.currentTemperature) + celsius)
-            print('Average temperature: ' + str(cell.averageTemperature) + celsius)
-            print('Status: ' + cell.status)
-            print('\n')
+            print(str.join(' :: ', (self.cellID, self.sensorID[-6:], self.status, str(self.currentTemperature)))
+            # print('Sensor ID: '+ cell.sensorID)
+            # print('Cell ID: ' + cell.cellID)
+            # print('Ambient temperature: ' + str(cell.ambientTemperature) + celsius)
+            # print('Warning: ' + str(cell.warningThreshold) + celsius)
+            # print('Alarm: ' + str(cell.alarmThreshold) + celsius)
+            # print('These settings are valid') if cell.validSettings else print('These settings are incorrect')
+            # print('Current temperature: ' + str(cell.currentTemperature) + celsius)
+            # print('Average temperature: ' + str(cell.averageTemperature) + celsius)
+            # print('Status: ' + cell.status)
+            # print('\n')
         except NameError:
             print('Could not read from device ' + cell.sensorID + '\n')
         except FileNotFoundError:

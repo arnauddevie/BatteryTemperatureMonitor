@@ -37,8 +37,8 @@ cellID_dict = dict(zip(sensor_list, cellID_list))
 temperature_dict = dict(zip(sensor_list, temperature_list))
 
 # Turn ON GPIO and temperature sensors
-os.system('modprobe w1-gpio')
-os.system('modprobe w1-therm')
+# os.system('modprobe w1-gpio')
+# os.system('modprobe w1-therm')
 
 base_dir = '/sys/bus/w1/devices/'
 registered_devices = set()
